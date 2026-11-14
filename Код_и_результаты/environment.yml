@@ -1,0 +1,17 @@
+# Окружение conda:  conda env create -f environment.yml  →  conda activate lab6
+name: lab6
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - numpy
+  - pandas
+  - scipy
+  - scikit-learn
+  - matplotlib>=3.9
+  - joblib
+  - pillow
+  - nbformat
+  - pyod
+  - jupyter
+  - ipykernel

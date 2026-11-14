@@ -1,0 +1,14 @@
+# Окружение conda с теми же версиями пакетов, что в Docker (вариант без Docker).
+# Из папки «Код_и_результаты»:
+#   conda env create -f docker/environment-lock.yml
+#   conda activate lab6-repro
+#   python docker/reproduce.py --smoke
+#   python docker/reproduce.py
+name: lab6-repro
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+      - -r requirements-lock.txt

@@ -1,0 +1,16 @@
+# Повтор расчётов в Docker. Запуск из папки «Код_и_результаты»:
+#   docker compose build                                   собрать образ (один раз)
+#   docker compose run --rm lab6 python docker/reproduce.py --smoke   быстрая проверка, несколько минут
+#   docker compose run --rm lab6                           полный повтор, около 4 ч на двух ядрах
+# Результаты: repro_run/ (таблицы, рисунки, журналы, СВЕРКА.md). Папка results/ не меняется.
+# Имя проекта задано явно: папка названа кириллицей, и Compose не может вывести имя из неё.
+name: lab6
+services:
+  lab6:
+    build:
+      context: ./docker
+    image: lab6-nnfa:py311
+    volumes:
+      - .:/work
+    working_dir: /work
+    command: ["python", "docker/reproduce.py"]

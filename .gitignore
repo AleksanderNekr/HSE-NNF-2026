@@ -1,0 +1,9 @@
+# временные файлы Office
+~$*
+
+# служебные файлы Python и Jupyter
+.ipynb_checkpoints/
+__pycache__/
+
+# выходные папки повторных прогонов (docker/reproduce.py)
+repro_*/
